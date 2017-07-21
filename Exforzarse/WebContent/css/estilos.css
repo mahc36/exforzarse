@@ -1,0 +1,230 @@
+body {
+    padding-top: 70px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.navbar-brand {
+    padding: 0px;
+}
+
+.navbar-brand>img {
+    height: 100%;
+    padding: 5px;
+    width: auto;
+}
+
+.navbar-inverse {
+    background-color: #444749;
+    border-color: #080808;
+}
+
+.containerpie {
+    background-color: #EF4021;
+}
+
+.carousel {
+    height: 500px;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+}
+
+.video {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin-bottom: 80px;
+}
+
+video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.rutinasmenu {
+    margin: 0 0 0 2%;
+    float: left;
+    width: 20%;
+}
+
+.rutinasmenu>p {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.list-group-item:hover {
+    font-size: 120%;
+    background-image: -webkit-linear-gradient(top, #DF7401 0%, #FE9A2E 100%);
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: chocolate;
+    color: black;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    background-color: chocolate;
+    color: black;
+}
+
+.nav-tabs>li>a {
+    font-weight: bold;
+}
+
+.nav-tabs>li>a:hover {
+    background-color: chocolate;
+    color: black;
+    font-size: 120%;
+}
+
+a {
+    color: black;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+section#contact {
+    background-color: white;
+    background-image: url(../img/DSC_0414.JPG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+section {
+    padding: 73px 0px;
+}
+
+section#contact .section-heading {
+    color: black;
+}
+
+section#contact .form-group {
+    margin-bottom: 25px;
+}
+
+section#contact .form-group input,
+section#contact .form-group textarea {
+    padding: 20px;
+}
+
+section#contact .form-group input.form-control {
+    height: auto;
+}
+
+section#contact .form-group textarea.form-control {
+    height: 236px;
+}
+
+section#contact .form-control:focus {
+    border-color: #fed136;
+    box-shadow: none;
+}
+
+section#contact ::-webkit-input-placeholder {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: darkgray;
+}
+
+.gellary_bg_none img {
+    width: 100%;
+    height: 250px;
+}
+
+section#contact :-moz-placeholder {
+    /* Firefox 18- */
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: darkgray;
+}
+
+section#contact ::-moz-placeholder {
+    /* Firefox 19+ */
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #eeeeee;
+}
+
+section#contact :-ms-input-placeholder {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: darkgray;
+}
+
+section#contact .text-danger {
+    color: #e74c3c;
+}
+
+.about_our_company {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about_our_company h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-size: 50px;
+    color: chocolate;
+    text-shadow: 1px 1px 3px #323232;
+}
+
+.titleline-icon {
+    position: relative;
+    max-width: 100px;
+    border-top: 4px double #F99700;
+    margin: 20px auto 20px;
+}
+
+.titleline-icon:after {
+    position: absolute;
+    top: -11px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: 'FontAwesome';
+    content: "\f141";
+    font-size: 20px;
+    line-height: 1;
+    color: #F99700;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+    height: 20px;
+    background: #ffffff;
+}
+
+.btn {}
+
+.get {
+    background-color: chocolate;
+}
