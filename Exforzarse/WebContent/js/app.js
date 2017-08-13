@@ -17,11 +17,8 @@ app.config(function ($routeProvider) {
         .when('/triceps', {
             templateUrl: '../paginas/parciales/triceps.html'
         })
-        .when('/muslos', {
-            templateUrl: '../paginas/parciales/muslos.html'
-        })
-        .when('/pantorrillas', {
-            templateUrl: '../paginas/parciales/pantorrillas.html'
+        .when('/piernas', {
+            templateUrl: '../paginas/parciales/piernas.html'
         })
         .when('/abdomen', {
             templateUrl: '../paginas/parciales/abdomen.html'
