@@ -29,9 +29,10 @@ app.config(function ($routeProvider) {
         .when('/biceps', {
             templateUrl: '../paginas/parciales/biceps.html'
         })
-        .when('/antebrazos', {
+        .when('/antebrazo', {
             templateUrl: '../paginas/parciales/antebrazos.html'
         });
+    
 });
 
 // create the controller and inject Angular's $scope

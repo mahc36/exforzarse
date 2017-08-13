@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class personaDTO {
 	
-	private String nombe;
-	private String lugarDeNacimiento;
-	private String fechaDeNacimiento;
-	private String tipoDedocumento;
+	private String nombre;
+	private String lugarNacimiento;
+	private String fechaNacimiento;
+	private String tipoDocumento;
 	private String numeroDocumento;
 	private String nombrePadre;
-	private String ocupaconPadre;
-	private String nombrMadre;
-	private String ocupaconMadre;
+	private String ocupacionPadre;
+	private String nombreMadre;
+	private String ocupacionMadre;
 	private int cantidadHermanos;
 	private ArrayList<String> nombreHermanos; //new ArrayList<String>();
 	private String direccion;
@@ -20,29 +20,30 @@ public class personaDTO {
 	private String eps;
 	private String tallaCamiseta;
 	private String tallaPantaloneta;
-	public String getNombe() {
-		return nombe;
+	
+	public String getNombre() {
+		return nombre;
 	}
-	public void setNombe(String nombe) {
-		this.nombe = nombe;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-	public String getLugarDeNacimiento() {
-		return lugarDeNacimiento;
+	public String getLugarNacimiento() {
+		return lugarNacimiento;
 	}
-	public void setLugarDeNacimiento(String lugarDeNacimiento) {
-		this.lugarDeNacimiento = lugarDeNacimiento;
+	public void setLugarNacimiento(String lugarNacimiento) {
+		this.lugarNacimiento = lugarNacimiento;
 	}
-	public String getFechaDeNacimiento() {
-		return fechaDeNacimiento;
+	public String getFechaNacimiento() {
+		return fechaNacimiento;
 	}
-	public void setFechaDeNacimiento(String fechaDeNacimiento) {
-		this.fechaDeNacimiento = fechaDeNacimiento;
+	public void setFechaNacimiento(String fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
-	public String getTipoDedocumento() {
-		return tipoDedocumento;
+	public String getTipoDocumento() {
+		return tipoDocumento;
 	}
-	public void setTipoDedocumento(String tipoDedocumento) {
-		this.tipoDedocumento = tipoDedocumento;
+	public void setTipoDocumento(String tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
 	}
 	public String getNumeroDocumento() {
 		return numeroDocumento;
@@ -56,23 +57,23 @@ public class personaDTO {
 	public void setNombrePadre(String nombrePadre) {
 		this.nombrePadre = nombrePadre;
 	}
-	public String getOcupaconPadre() {
-		return ocupaconPadre;
+	public String getOcupacionPadre() {
+		return ocupacionPadre;
 	}
-	public void setOcupaconPadre(String ocupaconPadre) {
-		this.ocupaconPadre = ocupaconPadre;
+	public void setOcupacionPadre(String ocupacionPadre) {
+		this.ocupacionPadre = ocupacionPadre;
 	}
-	public String getNombrMadre() {
-		return nombrMadre;
+	public String getNombreMadre() {
+		return nombreMadre;
 	}
-	public void setNombrMadre(String nombrMadre) {
-		this.nombrMadre = nombrMadre;
+	public void setNombreMadre(String nombreMadre) {
+		this.nombreMadre = nombreMadre;
 	}
-	public String getOcupaconMadre() {
-		return ocupaconMadre;
+	public String getOcupacionMadre() {
+		return ocupacionMadre;
 	}
-	public void setOcupaconMadre(String ocupaconMadre) {
-		this.ocupaconMadre = ocupaconMadre;
+	public void setOcupacionMadre(String ocupacionMadre) {
+		this.ocupacionMadre = ocupacionMadre;
 	}
 	public int getCantidadHermanos() {
 		return cantidadHermanos;
@@ -116,5 +117,4 @@ public class personaDTO {
 	public void setTallaPantaloneta(String tallaPantaloneta) {
 		this.tallaPantaloneta = tallaPantaloneta;
 	}
-
 }
