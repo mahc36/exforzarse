@@ -1,6 +1,14 @@
 app.controller("controladorTienda",  ["$scope", function controladorTienda($scope) {
     $scope.productos=[];
 	$scope.respuesta="";
+	
+	
+	$scope.obtenerTodos = function(){
+		$scope.productos=[{ruta:"chompa1-1.jepg",descripcion:"chompa",color:"gris",tipo:"hombre",indumentaria:"chompa"},
+				  		  {ruta:"chompa2-1.jepg",descripcion:"chompa",color:"gris",tipo:"hombre",indumentaria:"chompa"},
+						 ];
+	}
+	
 	$scope.obtenerTodos = function(){
         $scope.respuesta="Todos los productos";
         $scope.productos=[{ ruta:"camisetahombre1.jpg",descripcion:"camiseta para hombre azul",tipo:"hombre",indumentaria:"camiseta"},

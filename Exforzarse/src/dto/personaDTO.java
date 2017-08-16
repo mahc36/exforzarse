@@ -13,8 +13,8 @@ public class personaDTO {
 	private String ocupacionPadre;
 	private String nombreMadre;
 	private String ocupacionMadre;
-	private int cantidadHermanos;
-	private ArrayList<String> nombreHermanos; //new ArrayList<String>();
+	private int cantidadHermanos;  //new ArrayList<String>();
+	private ArrayList<String> nombreHermanos;
 	private String direccion;
 	private String correo;
 	private String eps;
