@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon.ico">
 </head>
 
-<body style="padding: 0;">
+<body style="padding: 0;" data-ng-app="app" data-ng-controller="controladorEnvioCorreo">
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -38,7 +38,7 @@
             <!--/.nav-collapse -->
         </div>
     </nav>
-    
+
     <section id="team" class="bg-light-gray">
         <div class="container">
             <div class="row">
@@ -96,8 +96,8 @@
             </div>
         </div>
     </section>
-    
-    
+
+
 
     <section id="contact" style="background-color: #A9A9A9;">
         <div class="container">
@@ -114,18 +114,18 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Tu nombre" id="name" required>
+                                    <input type="text" class="form-control" placeholder="Tu nombre" id="name" required data-ng-model="usuario.nombre">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Tu correo" id="email" required>
+                                    <input type="email" class="form-control" placeholder="Tu correo" id="email" required data-ng-model="usuario.correo">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" placeholder="Tu telefono" id="phone" required>
+                                    <input type="number" class="form-control" placeholder="Tu telefono" id="phone" required data-ng-model="usuario.telefono">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Tu mensaje" id="message" required></textarea>
+                                    <textarea class="form-control" placeholder="Tu mensaje" id="message" required data-ng-model="usuario.mensaje"></textarea>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -133,7 +133,7 @@
                         <div class="row">
                             <div class="col-lg-12 text-center col-lg-push-3">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-primary btn-xl get">Enviar mensaje</button>
+                                <button type="submit" class="btn btn-primary btn-xl get" data-ng-click="enviarCorreo(usuario)">Enviar mensaje</button>
                             </div>
                         </div>
                     </form>
@@ -152,48 +152,52 @@
             </div>
         </div>
     </section>
-    
-    
+
+
     <footer style="background-color: #D0D3D4;">
-   		<br>
+        <br>
         <div class="container">
             <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading"><font color="black">Mantengámonos en contacto!</font></h2>
-                <hr class="primary">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">
+                        <font color="black">Mantengámonos en contacto!</font>
+                    </h2>
+                    <hr class="primary">
+                </div>
+                <div class="col-lg-4 text-center">
+                    <a href="https://www.facebook.com/EXFORZARSE/" target="_blank"><img src="../img/darkFacebook.png" width="100" height="100"></a>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <a href="https://www.instagram.com/exforzarse/" target="_blank"><img src="../img/darkInstagram3.png" width="100" height="100"></a>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <a href="https://www.youtube.com/watch?v=VkQL8aGcTsE" target="_blank"><img src="../img/darkyoutube4.png" width="100" height="100"></a>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-phone fa-3x sr-contact"></i>
+                    <span><font color="black">321-220-7024 / 301-613-0742</font></span>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-road fa-3x sr-contact"></i>
+                    <span><font color="black">Calle 54#47-43 Rionegro-Antioquia</font></span>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                    <span><font color="black">corpexforzarse@hotmail.com</font></span>
+                </div>
             </div>
-            <div class="col-lg-4 text-center">
-                <a href="https://www.facebook.com/EXFORZARSE/" target="_blank"><img src="../img/darkFacebook.png" width="100" height="100"></a>
-            </div>
-            <div class="col-lg-4 text-center">
-                <a href="https://www.instagram.com/exforzarse/" target="_blank"><img src="../img/darkInstagram3.png" width="100" height="100"></a>
-            </div>
-            <div class="col-lg-4 text-center">
-                <a href="https://www.youtube.com/watch?v=VkQL8aGcTsE" target="_blank"><img src="../img/darkyoutube4.png" width="100" height="100"></a>
-            </div>
-            <div class="col-lg-4 text-center">
-                <i class="fa fa-phone fa-3x sr-contact"></i>
-                <span><font color="black">321-220-7024 / 301-613-0742</font></span>
-            </div>
-            <div class="col-lg-4 text-center">
-                <i class="fa fa-road fa-3x sr-contact"></i>
-                <span><font color="black">Calle 54#47-43 Rionegro-Antioquia</font></span>
-            </div>
-            <div class="col-lg-4 text-center">
-                <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                <span><font color="black">corpexforzarse@hotmail.com</font></span>
-            </div>
-        </div>
-        <br>
+            <br>
         </div>
         <div style="background-color: #ef4021;">
-	        <div class="container">
-	        	<br>
-	            <p class="text-muted" ALIGN=center><font color="black">Exforzarse. Todos los derechos resrvados</font></p>
-	        </div>
-    	</div>
+            <div class="container">
+                <br>
+                <p class="text-muted" ALIGN=center>
+                    <font color="black">Exforzarse. Todos los derechos resrvados</font>
+                </p>
+            </div>
+        </div>
     </footer>
-   
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -202,6 +206,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
     <script src="../js/app.js"></script>
+    <script src="../js/controladores/controladorEnvioCorreo.js"></script>
+    <script src="../js/servicios/ServicioEnvioCorreo.js"></script>
 </body>
 
 </html>
