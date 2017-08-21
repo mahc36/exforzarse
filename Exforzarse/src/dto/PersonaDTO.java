@@ -1,9 +1,7 @@
 package dto;
 
-import java.util.ArrayList;
-
-public class personaDTO {
-	
+public class PersonaDTO {
+	private int id;
 	private String nombre;
 	private String lugarNacimiento;
 	private String fechaNacimiento;
@@ -13,14 +11,20 @@ public class personaDTO {
 	private String ocupacionPadre;
 	private String nombreMadre;
 	private String ocupacionMadre;
-	private int cantidadHermanos;  //new ArrayList<String>();
-	private ArrayList<String> nombreHermanos;
+	private int cantidadHermanos; 
 	private String direccion;
 	private String correo;
 	private String eps;
 	private String tallaCamiseta;
 	private String tallaPantaloneta;
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -80,12 +84,6 @@ public class personaDTO {
 	}
 	public void setCantidadHermanos(int cantidadHermanos) {
 		this.cantidadHermanos = cantidadHermanos;
-	}
-	public ArrayList<String> getNombreHermanos() {
-		return nombreHermanos;
-	}
-	public void setNombreHermanos(ArrayList<String> nombreHermanos) {
-		this.nombreHermanos = nombreHermanos;
 	}
 	public String getDireccion() {
 		return direccion;

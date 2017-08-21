@@ -49,8 +49,8 @@
     <br>
     <!--action="https://www.facebook.com"-->
     
-    <div class="container" data-ng-app="app" data-ng-controller="formularioRegistroCtrl">
-        <form class="form-horizontal">
+    <div class="container" data-ng-app="app" data-ng-controller="controladorPersona">
+        <form class="form-horizontal" onsubmit="">
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="nombres">Nombre Completo:</label>
@@ -74,7 +74,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="fecha" required>Fecha de nacimiento:</label>
                 <div class="col-sm-4">
-                    <input data-ng-model="personaFormulario.fechaNacimiento" type="date" name="fecha">
+                    <input data-ng-model="personaFormulario.fechaNacimiento" type="text" name="fecha" placeholder="dd/mm/aaaa"> Ej. 03/06/1996
                 </div>
             </div>
             
@@ -82,10 +82,10 @@
                 <label class="control-label col-sm-2" for="tipodedocumento">Tipo de documento:</label>
                 <div class="col-sm-2" >
 				    <div class="radio">
-				      <label><input type="radio" ng-model="myVar" ng-value="true" name="optradio" required>Tarjeta Identidad</label>
+				      <label><input type="radio" ng-model="personaFormulario.tipoDocumento" ng-value="true" name="optradio" required>Tarjeta Identidad</label>
 				    </div>
 				    <div class="radio">
-				      <label><input type="radio" ng-model="myVar" ng-value="false"  name="optradio" required>Cedula</label>
+				      <label><input type="radio" ng-model="personaFormulario.tipoDocumento" ng-value="false" name="optradio" required>Cedula</label>
 				    </div>
 				    
 				</div>
@@ -94,21 +94,21 @@
             <div  class="form-group">
                 <label class="control-label col-sm-2" for="nombres">Número del documento de identidad</label>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" id="numeroDI" placeholder="Número del documento" name="numeroDI" required>
+                    <input type="text" class="form-control" id="numeroDI" placeholder="Número del documento" data-ng-model="personaFormulario.documentoIdentidad" name="numeroDI" required>
                 </div>
             </div>
 
 
-            <div style="background-color: #DC541F;" ng-show="myVar"  class="form-inline">
+            <div style="background-color: #DC541F;" ng-show="personaFormulario.tipoDocumento"  class="form-inline">
                 <label class="control-label col-sm-2" for="informacionpadres">Informacion Padres:</label>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" id="nombrePadre" placeholder="Nombres y apellidos padre" name="nombrePadre">
-                        <input type="text" class="form-control" id="ocupacionPadre" placeholder="Ocupacion Padre" name="ocupacionPadre">
+                        <input type="text" class="form-control" id="nombrePadre" data-ng-model="personaFormulario.nombresPadre" placeholder="Nombres y apellidos padre" name="nombrePadre">
+                        <input type="text" class="form-control" id="ocupacionPadre" data-ng-model="personaFormulario.ocupacionPadre" placeholder="Ocupacion Padre" name="ocupacionPadre">
                     </div>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" id="nombreMadre" placeholder="Nombres y apellidos madre" name="nombreMadre">
-                        <input type="text" class="form-control" id="ocupacionMadre" placeholder="Ocupacion Madre" name="ocupacionMadre">
+                        <input type="text" class="form-control" id="nombreMadre" data-ng-model="personaFormulario.nombresMadre" placeholder="Nombres y apellidos madre" name="nombreMadre">
+                        <input type="text" class="form-control" id="ocupacionMadre" data-ng-model="personaFormulario.ocupacionMadre" placeholder="Ocupacion Madre" name="ocupacionMadre">
                     </div>
                 </div>
             </div>
@@ -117,35 +117,28 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="cantidadhermanos">Cantidad de hermanos:</label>
                 <div class="col-sm-2">
-                    <input class="form-control" type="number" value="0" id="example-number-input">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="nombres">Nombre C/hermano:</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre de C/hermano" required>
+                    <input class="form-control" type="number" value="0" data-ng-model="personaFormulario.cantidadHermanos" id="example-number-input" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="nombres">Dirección domicilio:</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="nombre" placeholder="Direccion" required>
+                    <input type="text" class="form-control" id="nombre" data-ng-model="personaFormulario.direccion" placeholder="Direccion" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="correo">Correo:</label>
                 <div class="col-sm-6">
-                    <input type="email" class="form-control" id="correo" placeholder="Correo" name="correo" required>
+                    <input type="email" class="form-control" id="correo" data-ng-model="personaFormulario.correo" placeholder="Correo" name="correo" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="names">EPS:</label>
                 <div class="col-sm-4">
-                    <select class="form-control" id="eps">
+                    <select class="form-control" id="eps" data-ng-model="personaFormulario.eps" required>
                         <option>Sanitas</option>
                         <option>Sura</option>
                         <option>Compensar</option>
@@ -161,12 +154,12 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for="tipodedocumento">Tallas:</label>
+                <label class="control-label col-sm-2" for="tipodedocumento" >Tallas:</label>
                 <div class="col-sm-4">
                     <div class="form-check form-check-inline">
 
                         <label class="form-check-label">
-                            Camiseta: <select class="form-control" id="tallaCamiseta">
+                            Camiseta: <select class="form-control" id="tallaCamiseta" data-ng-model="personaFormulario.tallaCamiseta" required>
                                         <option>XXS</option>
                                         <option>XS</option>
                                         <option>S</option>
@@ -179,7 +172,7 @@
                     </div>
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            Pantaloneta: <select class="form-control" id="tallaPantaloneta">
+                            Pantaloneta: <select class="form-control" id="tallaPantaloneta" data-ng-model="personaFormulario.tallaPantaloneta" required>
                                         <option>XXS</option>
                                         <option>XS</option>
                                         <option>S</option>
