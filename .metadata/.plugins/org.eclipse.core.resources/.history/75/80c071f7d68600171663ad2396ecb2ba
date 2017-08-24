@@ -1,0 +1,7 @@
+package dao.secuencia;
+
+public interface ISecuenciaDAO {
+	
+	public Integer obtenerConsecutivo(String nameOfSequence,Connection con) throws Exception;
+
+}

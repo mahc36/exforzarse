@@ -1,0 +1,18 @@
+package dao.person.jdbc;
+
+import java.sql.Connection;
+
+import dao.person.IPersonDAO;
+import dto.PersonDTO;
+import negocio.IPersonaNegocio;
+
+public class PersonDAO implements IPersonDAO {
+
+	@Override
+	public String agregarPersona(PersonDTO persona, Connection con) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="dto.UsuarioDTO"/>
+<fullyQualifiedTypeName name="dto.PersonaDTO"/>
+<fullyQualifiedTypeName name="dao.person.jdbc.PersonDAO"/>
+<fullyQualifiedTypeName name="dao.person.IPersonDAO"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="dto.PersonDTO"/>
+<fullyQualifiedTypeName name="negocio.IPersonaNegocio"/>
+<fullyQualifiedTypeName name="negocio.impl.PersonaNegocio"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="util.PersisUtil"/>
+<fullyQualifiedTypeName name="dao.secuencia.ISecuenciaDAO"/>
+<fullyQualifiedTypeName name="dao.secuencia.jdbc.SecuenciaDAO"/>
+</qualifiedTypeNameHistroy>

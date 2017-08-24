@@ -1,0 +1,9 @@
+package negocio;
+
+import dto.PersonaDTO;
+
+public interface IPersonaNegocio {
+	
+	public String agregarPersona(UsuarioDTO persona);
+
+}

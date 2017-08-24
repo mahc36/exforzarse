@@ -1,0 +1,14 @@
+package negocio.impl;
+
+import dto.PersonDTO;
+import negocio.IPersonaNegocio;
+
+public class PersonaNegocio implements IPersonaNegocio {
+
+	@Override
+	public String agregarPersona(PersonDTO persona) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

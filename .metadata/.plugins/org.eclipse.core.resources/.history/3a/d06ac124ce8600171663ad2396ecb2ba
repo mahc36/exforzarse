@@ -1,0 +1,7 @@
+package dao.person.jdbc;
+
+public class PersonSql {
+	
+	public static final String INSERT="INSERT INTO "+TABLE_NAME+" ( per_id, per_name, per_email, per_password)  VALUES (?, ?, ?, ?)";
+
+}

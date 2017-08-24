@@ -36,7 +36,7 @@ public class EnvioCorreo {
             mensaje.setFrom(new InternetAddress(correoOrigen));
             mensaje.setRecipient(Message.RecipientType.TO, new InternetAddress("matteohenao36@gmail.com"));
             mensaje.setSubject("Mensaje de "+usuario.getNombre());
-            mensaje.setText(usuario.getMensaje()+" \nDe: "+usuario.getNombre()+" \nCorreo: "+usuario.getCorreo()+" \nTeléfono "+usuario.getTelefono());
+            mensaje.setText(usuario.getMensaje()+" \nDe: "+usuario.getNombre()+" \nCorreo: "+usuario.getCorreo()+" \nTelÃ©fono "+usuario.getTelefono());
             
             Transport transporte = sesion.getTransport("smtp");
             transporte.connect(host,correoOrigen,"ABCD.efgh.123");

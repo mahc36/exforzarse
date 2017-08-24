@@ -1,0 +1,7 @@
+package dao.person;
+
+public interface IPersonDAO {
+
+	public String agregarPersona(PersonDTO persona,Connection con) throws exception;
+	
+}

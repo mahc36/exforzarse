@@ -1,0 +1,47 @@
+package dao.person.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import dao.person.IPersonDAO;
+import dto.PersonDTO;
+import negocio.IPersonaNegocio;
+import negocio.impl.PersonaNegocio;
+import util.PersisUtil;
+
+public class PersonDAO implements IPersonDAO {
+
+	@Override
+	public String agregarPersona(PersonDTO persona, Connection con) throws Exception {
+		String message ="";
+		String query;
+        PreparedStatement instruccion = null;
+        IPersonaNegocio personBussiness = new PersonaNegocio();
+        try {
+        	query = PersonSql.INSERT;	
+        	instruccion = con.prepareStatement(query);
+        	int index = 1;
+        	instruccion.setString(index++, persona.getNombre());
+        	instruccion.setString(index++, persona.getLugarNacimiento());
+        	instruccion.setString(index++, persona.getFechaNacimiento());
+        	instruccion.setString(index++, persona.getTipoDocumento());
+        	instruccion.setInt(index++, persona.getNumeroDocumento());
+        	instruccion.setString(index++, persona.getNombrePadre());
+        	instruccion.setString(index++, persona.getOcupacionPadre());
+        	instruccion.setString(index++, persona.getNombreMadre());
+        	
+        	instruccion.executeUpdate();
+        	message="OK";
+		} catch (Exception sql) {
+			message ="ERROR";
+        	con.rollback();
+            throw new Exception(sql.toString());
+		}
+        finally {
+            PersisUtil.closeResources(instruccion);
+         }
+        return message;
+	}
+
+
+}

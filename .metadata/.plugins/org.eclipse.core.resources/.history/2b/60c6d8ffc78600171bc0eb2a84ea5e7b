@@ -1,0 +1,19 @@
+package negocio.impl;
+
+import dto.PersonDTO;
+import negocio.IPersonaNegocio;
+
+import javax.sql.DataSource;
+
+public class PersonaNegocio implements IPersonaNegocio {
+	
+	private IPersonDao personDAO;
+	private DataSource dataSource;
+
+	@Override
+	public String agregarPersona(PersonDTO persona) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

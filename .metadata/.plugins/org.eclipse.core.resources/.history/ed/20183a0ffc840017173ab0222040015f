@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tienda</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link href="../css/creative.min.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
+   <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon.ico">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    <img src="../img/logoclubexforzarse.png" alt="logo club">
+                </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="active"><a href="#">Tienda</a></li>
+                    <li><a href="entrenamiento.html">Entrenamiento</a></li>
+                    <li><a href="dietas.html">Alimentacion</a></li>
+                    <li><a href="acercaDeNosotros.html">Acerca de nosotros</a></li>
+                    <li><a href="contacto.html">Contactanos</a></li>
+                    <li><a href="registro.html">Registro</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div>
+        <div align="center">
+            <img src="../img/ropa-deportiva-exforzarse.jpg" alt="TiendaExforzarse" style="width: 95%; height: 228px; border-left: 30px !important;">
+        </div>
+    </div>
+    <div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html">Exforzarse</a></li>
+            <li>Tienda</li>
+        </ul>
+    </div>
+    <div>
+        <h1 style="margin-left: 70px; margin-top: 50px;">Tienda de ropa</h1>
+    </div>
+
+    <div data-ng-app="app" data-ng-controller="controladorTienda" data-ng-init="obtenerTodosReales()" class="row" style="margin-left: 15px; margin-right: 15px; margin-top: 30px;">
+        <div class="col-sm-4 col-md-3">
+            <div class="thumbnail">
+                <div data-ng-click="" class="caption">
+                    <h3 style="height: 70px">Filtros</h3>
+                    <h4>Para:</h4>
+                    <form>
+                    	<div class="checkbox">
+                            <label><input type="checkbox"  data-ng-model="tipoRopa" data-ng-true-value="''" data-ng-false-value="''">Todo</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"  data-ng-model="tipoRopa" data-ng-true-value="'mujer'" data-ng-false-value="''">Mujer</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"  data-ng-model="tipoRopa" data-ng-true-value="'hombre'" data-ng-false-value="''">Hombre</label>
+                        </div>
+                    </form>
+                    <br>
+                    <h4>Tipo:</h4>
+                    <form>
+                        <select class="form-control" data-ng-model="tipoIndumentaria">	
+							<option data-ng-value="''" >Todo</option>
+							<option data-ng-value="'sudadera'">Sudaderas</option>
+							<option data-ng-value="'camisilla'">Camisillas</option>
+							<option data-ng-value="'chompa'">Chompas</option>
+							
+						</select>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        
+        <div data-ng-show="productos.length == 0">
+        	<h1>No hay resultados</h1>
+        </div>
+        
+        
+        <div class="col-sm-6 col-md-8"> 
+            <div data-ng-show="productos.length != 0" data-ng-repeat="item in productos | filter:{tipo:tipoRopa} | filter:{indumentaria:tipoIndumentaria}" class="col-sm-12 col-md-4" style="margin-top: 30px;">
+                <div class="thumbnail">
+                	<div style="height: 200px;" id="{{item.id}}" class="carousel slide" data-interval="false" data-ride="carousel">
+					      <!-- Carousel indicators -->
+					      <ol class="carousel-indicators">
+						        <li data-target="#{{item.id}}" data-slide-to="0" class="active"></li>
+						        <li data-target="#{{item.id}}" data-slide-to="1"></li>
+						  </ol>
+					      <!-- Carousel items -->
+					      <div class="carousel-inner">
+						        <div class="item active">
+						          <img style="height: 200px;" data-ng-src="../img/fotosTiendaExforzarse/{{item.ruta}}" alt="{{item.ruta}}">
+						        </div>
+						        <div class="item">
+						          <img style="height: 200px;" data-ng-src="../img/fotosTiendaExforzarse/{{item.ruta2}}" alt="{{item.ruta2}}">
+						        </div>
+					      </div>
+					      
+					      <!-- Carousel nav -->
+					      <a class="carousel-control left"  href="#{{item.id}}"  data-slide="prev"></a>
+					      <a class="carousel-control right" href="#{{item.id}}" data-slide="next"></a>
+				    </div>
+                    <div class="caption">
+                        <h3 style="height: 70px">{{item.descripcion}}</h3>
+                        <p style="height: 10px">Para:  {{item.tipo}}</p>
+                        <p style="height: 10px">Precio:  {{item.precio}} $</p>
+                        <p style="height: 10px">Color:  {{item.color}}</p>
+                        <p>
+                            <a data-ng-click="visitSite(iesid)" class="btn btn-primary" role="button">Ver mejor</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+   <br><br>
+   <footer style="background-color: #D0D3D4;">
+   		<br>
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading"><font color="black">Mantengámonos en contacto!</font></h2>
+                <hr class="primary">
+            </div>
+            <div class="col-lg-4 text-center">
+                <a href="https://www.facebook.com/EXFORZARSE/" target="_blank"><img src="../img/darkFacebook.png" width="100" height="100"></a>
+            </div>
+            <div class="col-lg-4 text-center">
+                <a href="https://www.instagram.com/exforzarse/" target="_blank"><img src="../img/darkInstagram3.png" width="100" height="100"></a>
+            </div>
+            <div class="col-lg-4 text-center">
+                <a href="https://www.youtube.com/watch?v=VkQL8aGcTsE" target="_blank"><img src="../img/darkyoutube4.png" width="100" height="100"></a>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fa fa-phone fa-3x sr-contact"></i>
+                <span><font color="black">321-220-7024 / 301-613-0742</font></span>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fa fa-road fa-3x sr-contact"></i>
+                <span><font color="black">Calle 54#47-43 Rionegro-Antioquia</font></span>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                <span><font color="black">corpexforzarse@hotmail.com</font></span>
+            </div>
+        </div>
+        <br>
+        </div>
+        <div style="background-color: #ef4021;">
+	        <div class="container">
+	        	<br>
+	            <p class="text-muted" ALIGN=center><font color="black">Exforzarse. Todos los derechos resrvados</font></p>
+	        </div>
+    	</div>
+    </footer>
+    
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+    <script type="text/javascript" src="../js/controladores/controladorTienda.js"></script>
+
+</body>
+
+</html>
+

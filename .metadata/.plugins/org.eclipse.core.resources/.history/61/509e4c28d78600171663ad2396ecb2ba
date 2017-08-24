@@ -1,0 +1,15 @@
+package dao.secuencia.jdbc;
+
+import java.sql.Connection;
+
+import dao.secuencia.ISecuenciaDAO;
+
+public class SecuenciaDAO implements ISecuenciaDAO {
+
+	@Override
+	public Integer obtenerConsecutivo(String nombreSecuencia, Connection con) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
